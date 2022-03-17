@@ -31,12 +31,14 @@ using namespace std::literals;
 #define CLIENT_TO_SERVER_MQ_NAME "bxt-simulation-client-to-server"
 #define MUTEX_NAME "bxt-simulation-mutex"
 
-void get_shared_dir(std::string &shared_dir) {
-	shared_dir = "bxt-simulation-ipc-shared-dir";
-}
+namespace boost::interprocess::ipcdetail {
+	void get_shared_dir(std::string& shared_dir) {
+		shared_dir = "bxt-simulation-ipc-shared-dir";
+	}
 
-void get_shared_dir(std::wstring &shared_dir) {
-	shared_dir = L"bxt-simulation-ipc-shared-dir";
+	void get_shared_dir(std::wstring& shared_dir) {
+		shared_dir = L"bxt-simulation-ipc-shared-dir";
+	}
 }
 
 namespace simulation_ipc {
