@@ -5,7 +5,7 @@
 
 // Hack to fix boost::interprocess on wine.
 #ifdef _WIN32
-#define BOOST_INTERPROCESS_SHARED_DIR_PATH L"bxt-simulation-ipc-shared-dir"
+#define BOOST_INTERPROCESS_SHARED_DIR_FUNC
 #endif
 
 #include <boost/interprocess/creation_tags.hpp>
@@ -30,6 +30,14 @@ using namespace std::literals;
 #define SERVER_TO_CLIENT_MQ_NAME "bxt-simulation-server-to-client"
 #define CLIENT_TO_SERVER_MQ_NAME "bxt-simulation-client-to-server"
 #define MUTEX_NAME "bxt-simulation-mutex"
+
+void get_shared_dir(std::string &shared_dir) {
+	shared_dir = "bxt-simulation-ipc-shared-dir";
+}
+
+void get_shared_dir(std::wstring &shared_dir) {
+	shared_dir = L"bxt-simulation-ipc-shared-dir";
+}
 
 namespace simulation_ipc {
 	enum ClientToServerMessageType {
