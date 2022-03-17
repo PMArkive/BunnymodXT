@@ -3,6 +3,8 @@
 #include "simulation_ipc.hpp"
 #include "modules/HwDLL.hpp"
 
+// Hack to fix boost::interprocess on wine.
+#define BOOST_INTERPROCESS_SHARED_DIR_PATH "bxt-simulation-ipc-shared-dir"
 #include <boost/interprocess/creation_tags.hpp>
 #include <boost/interprocess/exceptions.hpp>
 #include <boost/interprocess/interprocess_fwd.hpp>
