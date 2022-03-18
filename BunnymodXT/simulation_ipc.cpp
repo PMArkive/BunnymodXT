@@ -35,11 +35,11 @@ using namespace std::literals;
 #ifdef _WIN32
 namespace boost::interprocess::ipcdetail {
 	void get_shared_dir(std::string& shared_dir) {
-		shared_dir = ".bxt-ipc";
+		shared_dir = "bxt-ipc";
 	}
 
 	void get_shared_dir(std::wstring& shared_dir) {
-		shared_dir = L".bxt-ipc";
+		shared_dir = L"bxt-ipc";
 	}
 }
 #endif
@@ -81,9 +81,9 @@ namespace simulation_ipc {
 #ifdef _WIN32
 	std::string create_ipc_dir() {
 		try {
-			std::filesystem::create_directory(".bxt-ipc");
+			std::filesystem::create_directory("bxt-ipc");
 		} catch (std::filesystem::filesystem_error &ex) {
-			return "error creating \".bxt-ipc\" directory: "s + ex.what();
+			return "error creating \"bxt-ipc\" directory: "s + ex.what();
 		}
 
 		return {};
