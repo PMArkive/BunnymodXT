@@ -28,7 +28,7 @@ namespace simulation_ipc {
 
 		char command[1024];
 
-		// 10 MiB should cover reasonably large scripts.
+		// 1 MiB should cover reasonably large scripts.
 		// If it starts with a NULL byte then there's no script, simply run the command.
 		char script[1 * 1024 * 1024];
 	};
