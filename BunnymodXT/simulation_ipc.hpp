@@ -30,7 +30,7 @@ namespace simulation_ipc {
 
 		// 10 MiB should cover reasonably large scripts.
 		// If it starts with a NULL byte then there's no script, simply run the command.
-		char script[10 * 1024 * 1024];
+		char script[1 * 1024 * 1024];
 	};
 
 	// On the client, the last received message. On the server, the message to send.
