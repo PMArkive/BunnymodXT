@@ -99,6 +99,7 @@ static __attribute__((constructor(1337))) void Construct()
 	Hooks::AddToHookedModules(&ClientDLL::GetInstance());
 	Hooks::AddToHookedModules(&ServerDLL::GetInstance());
 	Hooks::AddToHookedModules(&SDL::GetInstance());
+	Hooks::AddToHookedModules(&bxt_rs::GetInstance());
 	Hooks::Init(false);
 }
 

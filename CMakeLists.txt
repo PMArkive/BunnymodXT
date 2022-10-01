@@ -144,6 +144,7 @@ set (HEADER_FILES
 	BunnymodXT/modules/ClientDLL.hpp
 	BunnymodXT/modules/ServerDLL.hpp
 	BunnymodXT/modules/SDL.hpp
+	BunnymodXT/modules/bxt_rs.hpp
 	BunnymodXT/bunnymodxt.hpp
 	BunnymodXT/cmd_wrapper.hpp
 	BunnymodXT/custom_triggers.hpp
@@ -177,6 +178,7 @@ set (SOURCE_FILES
 	BunnymodXT/modules/ClientDLL.cpp
 	BunnymodXT/modules/ServerDLL.cpp
 	BunnymodXT/modules/SDL.cpp
+	BunnymodXT/modules/bxt_rs.cpp
 	BunnymodXT/custom_triggers.cpp
 	BunnymodXT/cvars.cpp
 	BunnymodXT/discord_integration.cpp

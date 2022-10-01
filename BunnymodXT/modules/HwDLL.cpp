@@ -11,6 +11,7 @@
 #include "ClientDLL.hpp"
 #include "ServerDLL.hpp"
 #include "SDL.hpp"
+#include "bxt_rs.hpp"
 #include "../patterns.hpp"
 #include "../cvars.hpp"
 #include "../hud_custom.hpp"
@@ -4106,6 +4107,8 @@ void HwDLL::InsertCommands()
 					armor,
 					pushables,
 				});
+
+				bxt_rs::GetInstance().on_tas_playback_frame();
 
 				StartTracing();
 				auto p = HLStrafe::MainFunc(player, movement_vars, f, StrafeState, Buttons, ButtonsPresent, std::bind(&HwDLL::UnsafePlayerTrace, this, std::placeholders::_1, std::placeholders::_2, std::placeholders::_3), hlstrafe_version);
